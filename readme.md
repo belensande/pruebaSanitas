@@ -12,3 +12,7 @@ Llamada POST al endpoint "sumar" cuyo body será un JSON con el siguiente format
 ### Restar
 
 Mismo funcionamiento con endpoint "restar"
+
+# Instalación
+
+mvn clean package
