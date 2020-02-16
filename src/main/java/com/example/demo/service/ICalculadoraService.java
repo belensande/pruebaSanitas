@@ -1,8 +1,9 @@
 package com.example.demo.service;
 
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 public interface ICalculadoraService {
-    double sumar(@NotNull double operando1, @NotNull double operando2);
-    double restar(@NotNull double operando1, @NotNull double operando2);
+    BigDecimal sumar(@NotNull BigDecimal operando1, @NotNull BigDecimal operando2);
+    BigDecimal restar(@NotNull BigDecimal operando1, @NotNull BigDecimal operando2);
 }

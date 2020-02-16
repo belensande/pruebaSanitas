@@ -4,6 +4,8 @@ import com.example.demo.dto.InputDto;
 import com.example.demo.service.ICalculadoraService;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @RestController
 public class CalculadoraController {
 
@@ -14,12 +16,12 @@ public class CalculadoraController {
     }
 
     @PostMapping("sumar")
-    public double sumar(@RequestBody InputDto input){
-        return calculadoraService.sumar(input.getOperando1().doubleValue(), input.getOperando2().doubleValue());
+    public BigDecimal sumar(@RequestBody InputDto input){
+        return calculadoraService.sumar(input.getOperando1(), input.getOperando2());
     }
 
-    @GetMapping("restar/{operando1}/{operando2}")
-    public double restar(@PathVariable double operando1, @PathVariable double operando2){
-        return calculadoraService.restar(operando1,operando2);
+    @PostMapping("restar")
+    public BigDecimal restar(@RequestBody InputDto input){
+        return calculadoraService.restar(input.getOperando1(), input.getOperando2());
     }
 }
