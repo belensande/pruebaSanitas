@@ -11,4 +11,9 @@ public class CalculadoraController {
     public double sumar(@PathVariable double operando1, @PathVariable double operando2){
         return operando1 + operando2;
     }
+
+    @GetMapping("restar/{operando1}/{operando2}")
+    public double restar(@PathVariable double operando1, @PathVariable double operando2){
+        return operando1 - operando2;
+    }
 }
